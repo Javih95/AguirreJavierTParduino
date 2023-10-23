@@ -7,33 +7,19 @@ Aguirre-Javier
 # Descripción
 Este proyecto consiste en un contador de dos dígitos que utiliza una pantalla de 7 segmentos para mostrar el valor del contador. Los botones "SUBE", "BAJA" y "Interruptor" permiten incrementar, disminuir y cambiar el contador para mostrar numeros primos respectivamente.
 # Función principal
-monitorea constantemente si se han presionado los botones "SUBE", "BAJA" o "Interruptor", y toma acciones en función de los botones presionados, como incrementar, disminuir o cambiar la funcion a mostrar en los displays. Además, se encarga de mostrar el valor del contador en los Displays de 7 segmentos.
-void loop()
+determina si un numero es Primo o no para enviarlo a la funcion PrintNumeroPrimo().
+bool esPrimo(int numero) 
 {
-  int estadoInterruptor = digitalRead(interruptor);
-  if (estadoInterruptor == LOW) 
-  {
-    PrintCount();// Muestra el valor del contador en el Display
-    int presionado = KeyPressed();// Detecta si se ha presionado uno de los botones
-    if(presionado == 	SUBE)
+    if (numero <= 1)
     {
-      sumar();
+        return false; // 0 y 1 no son primos
     }
-    if(presionado == BAJA)
+    for (int i = 2; i < numero; i++) 
     {
-      restar();
+        if (numero % i == 0)
+        {
+            return false; // Si es divisible por algún número en el rango [2, sqrt(numero)], no es primo
+        }
     }
-  
-  }
-  else if (estadoInterruptor == HIGH)
-  {
-    PrintNumeroPrimo();// Muestra el valor del contador en el Display solo si es un numero Primo
-    int presionado = KeyPressed();// Detecta si se ha presionado uno de los botones
-    if(presionado == 	SUBE)
-    {
-      sumar();
-    }
-  }
+    return true; // Si no es divisible por ningún número en ese rango, es primo
 }
-# Enlace al proyecto
-https://www.tinkercad.com/things/3lFp4HN0W1S
