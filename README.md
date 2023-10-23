@@ -18,3 +18,5 @@ https://www.tinkercad.com/things/6TdLueMVKp7
 https://www.tinkercad.com/things/3lFp4HN0W1S
 3. Tercera parte
 https://www.tinkercad.com/things/kSra6bKdsOw
+4. Cuarta parte
+https://www.tinkercad.com/things/gqZ8YS4VyKU
